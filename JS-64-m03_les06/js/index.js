@@ -133,4 +133,81 @@ function getStockReport(companies) {
 
 }
 
-getStockReport(companies)
+// getStockReport(companies)
+
+
+
+
+/**
+ * Task 5
+ * Напиши функцію `createContact(contact)` так, щоб вона повертала новий
+ * об'єкт контакту з доданими властивостями `id` та `createdAt`, а також `list` зі
+ * значенням "default" якщо в `contact` немає такої властивості.
+ */
+
+const createContact = function(contact) {
+  // 1. Створити новий обʼєкт
+  // 2. Додати до нього нові ключі
+  //   id
+  //   createdAt
+  //   list, якщо його нема, то дати дефолтне значення
+  return {
+    list: 'default',
+    ...contact,
+    id: 1
+  }
+}
+
+const contact = {
+  name: 'Mango',
+  email: 'mango@mail.com',
+  list: 'friends',
+}
+
+const newContact = createContact(contact);
+newContact.name = "Ser. Pan";
+
+console.log(newContact)
+console.log(contact)
+
+
+
+
+/**
+ * 6. 
+ * Напиши функцію `transformUsername(user)` так, 
+ * щоб вона повертала новий об'єкт із властивістю
+ * `fullName`, замість `firstName` та `lastName`.
+ */
+
+const transformUsername = function ({firstName, lastName, ...restProps}) {
+
+  return {
+    fullName: `${firstName} ${lastName}`,
+    ...restProps
+  }
+}
+
+const user = {
+  id: 1,
+  firstName: 'Jacob',
+  lastName: 'Mercer',
+  email: 'j.mercer@mail.com',
+  friendCount: 40,
+}
+
+const newUser = transformUsername(user);
+console.log(newUser)
+
+
+
+// Питання з кахуту:
+
+// const userP = {
+//   email: "mango@mail.com",
+//   age: 20
+// };
+
+// const { email: userEmail } = userP;
+
+// console.log(email) // Помилка, бо змінної email нема
