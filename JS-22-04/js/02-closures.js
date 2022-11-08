@@ -106,7 +106,7 @@ const rounder = function (places) {
 
 // Приватные данные и функции - скрытые реализации, интерфейс
 
-const salaryManagerFactory = function (employeeName, baseSalary) {
+const salaryManagerFactory = function (employeeName, baseSalary = 0) {
     let salary = baseSalary;
 
     const changeBy = function (amount) {
@@ -115,10 +115,10 @@ const salaryManagerFactory = function (employeeName, baseSalary) {
 
     return {
         raise(amount) {
-            changeBy(amount);
+            salary += amount;
         },
         lower(amount) {
-            changeBy(amount);
+             salary -= amount;
         },
         current() {
             return `Текущая зарплата ${employeeName} - ${salary}`;
@@ -126,10 +126,15 @@ const salaryManagerFactory = function (employeeName, baseSalary) {
     };
 };
 
+const salaryManager = salaryManagerFactory(`Mango`, 5000);
+
+console.log(salaryManager.current());
+
+
 // const myLibFactory = function () {
 //     let value = 0;
 
-//     const add = function () {
+//     const add = function (num) {
 //         value += num;
 //     }
 
