@@ -80,3 +80,21 @@ const tweets = [
   { id: `004`, likes: 0, tags: [`js`, `nodejs`, `react`] },
 ];
 
+// const allTags = tweets.reduce((tags,tweet) => { 
+//     tags.push(...tweet.tags);
+
+//     return tags;
+// }, []);
+const allTags = tweets.reduce((tags, tweet) => {
+//   tags.push(...tweet.tags);
+
+  return [...tags, ...tweet.tags];
+}, []);
+console.log(allTags);
+
+
+
+// Ведем статистику тегов
+
+// const tagsStats = allTags.reduce();
+// console.log(tagsStats);
