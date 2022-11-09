@@ -60,3 +60,23 @@
 
 
 
+// еще разок стрелка как метод объекта (бесполезно)
+
+const objA = {
+    x: 5,
+    showX() {
+        console.log(`this в objA.showX: `, this);
+        console.log(this.x);
+
+        const objB = {
+            y: 10,
+            showThis: () => {
+                console.log(`this в objB.showThis: `, this);
+            },
+        };
+
+        objB.showThis();
+    },
+};
+
+objA.showX();
