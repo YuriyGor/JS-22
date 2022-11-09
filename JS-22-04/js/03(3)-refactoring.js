@@ -77,4 +77,60 @@ const players = [
 
 // Увеличиваем кол-во поинтов каждого игрока
 
-сщтые гзвфеу
+// const upatedPlayers = players.map(function (player) {
+//     return {
+//         ...player,
+//         points: player.points + player.points * 0.1,
+//     };
+// });
+
+// const upatedPlayers = players.map (player => {
+//   return {
+//     ...player,
+//     points: player.points + player.points * 0.1,
+//   };
+// });
+
+const upatedPlayers = players.map(player => ({
+    ...player,
+    points: player.points + player.points * 0.1,
+  }));
+
+console.table(upatedPlayers);
+
+
+
+// Увеличиваем кол-во часов игрока по id
+
+const playerIdToUpdate = `player-3`;
+
+// const updatePlayers = players.map(function (player) {
+//     if (player.id === playerIdToUpdate) {
+//         return {
+//             ...player,
+//             timePlayed: player.timePlayed + 50,
+//         };
+//     }
+
+//     return player;
+// });
+
+// const updatePlayers = players.map (player =>  {
+//   if (player.id === playerIdToUpdate) {
+//     return {
+//       ...player,
+//       timePlayed: player.timePlayed + 50,
+//     };
+//   }
+
+//   return player;
+// });
+
+const updatePlayers = players.map(player => {
+    return player.id === playerIdToUpdate
+        ? { ...player, timePlayed: player.timePlayed + 50 }
+        : player;
+});
+
+console.table(updatePlayers);
+
