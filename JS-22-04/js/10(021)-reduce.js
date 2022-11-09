@@ -80,21 +80,54 @@ const tweets = [
   { id: `004`, likes: 0, tags: [`js`, `nodejs`, `react`] },
 ];
 
-// const allTags = tweets.reduce((tags,tweet) => { 
+// const allTags = tweets.reduce((tags,tweet) => {
 //     tags.push(...tweet.tags);
 
 //     return tags;
 // }, []);
-const allTags = tweets.reduce((tags, tweet) => {
-//   tags.push(...tweet.tags);
 
-  return [...tags, ...tweet.tags];
-}, []);
+// или так
+
+// const allTags = tweets.reduce((tags, tweet) => {
+// //   tags.push(...tweet.tags);
+
+//   return [...tags, ...tweet.tags];
+// }, []);
+
+// или так
+
+const allTags = tweets.reduce((tags, tweet) => [...tags, ...tweet.tags], []);
 console.log(allTags);
 
 
 
 // Ведем статистику тегов
 
-// const tagsStats = allTags.reduce();
+// const tagsStats = allTags.reduce((acc, tag) => {
+//     console.log(acc);
+
+//     if(acc[tag]) {
+//         acc[tag] += 1;
+
+//         return acc;
+//     }
+
+//     acc[tag] = 1;
+        
+//     return acc;
+// }, {});
 // console.log(tagsStats);
+
+// или так(тернарник)
+
+const tagsStats = allTags.reduce((acc, tag) => {
+       return {
+        ...acc,
+        [tag]: acc[tag] ? acc[tag] + 1 : 1,
+    };
+}, {});
+console.log(tagsStats);
+
+
+// если свойство с ключом tag есть, увеличить его значение на 1
+// если нет  -  сделать и записать 1
