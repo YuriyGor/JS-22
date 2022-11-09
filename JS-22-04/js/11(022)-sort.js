@@ -65,9 +65,26 @@ const players = [
 const sortedByBestPlayers = [...players].sort((prevPlayer, nextPlayer) =>
     prevPlayer.timePlayed - nextPlayer.timePlayed,
 );
-console.table(sortedByBestPlayers);
+// console.table(sortedByBestPlayers);
     
 const sortedByWorstPlayers = [...players].sort((prevPlayer, nextPlayer) =>
     prevPlayer.timePlayed - nextPlayer.timePlayed,
 );
-    console.table(sortedByWorstPlayers);
+    // console.table(sortedByWorstPlayers);
+
+
+
+    // По имени
+
+const byName = [...players].sort((a, b) => {
+    const result = a.name[0] > b.name[0];
+
+    if (result) {
+        return 1;
+    }
+
+    if (!result) {
+        return -1;
+    }
+ });
+console.table(byName);
