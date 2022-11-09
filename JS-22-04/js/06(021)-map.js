@@ -24,6 +24,7 @@ const players = [
   { id: `player-4`, name: `Ajax`, timePlayed: 1500, points: 71, online: false },
   { id: `player-5`, name: `Chelsy`, timePlayed: 80, points: 48, online: true },
 ];
+console.table(players);
 
 
 // Получаем массив имен всех игроков
@@ -34,8 +35,41 @@ console.log(`playerNames`, playerNames);
 const playerIds = players.map(player => player.id);
 console.log(`playerIds`, playerIds);
 
-const res = players.map(({ name, online }) => { name, online});
-console.log(`res`, res);
+// const res = players.map(({ name, online }) => { name, online});
+// console.log(`res`, res);
 
 
 // Увеличиваем кол-во поинтов каждого игрока на 10%
+
+const upatedPlayers = players.map (player => ({
+    ...player,
+    points: player.points * 1.1,
+}));
+console.table(upatedPlayers);
+console.log(upatedPlayers);
+
+
+
+// Увеличиваем кол-во часов каждого игрока по id
+
+const playerIdToUpdate = `player-4`;
+
+const updatedPlayers = players.map((player) => { 
+  if (playerIdToUpdate === player.id) {
+   
+    return {
+      ...player,
+      timePlayed: player.timePlayed + 100,
+    };
+  }
+
+  return player;
+}); 
+
+// const updatedPlayers = players.map(player =>
+//   playerIdToUpdate === player.id
+//     ? { ...player, timePlayed: player.timePlayed + 100 }
+//     : player,
+// );
+
+console.table(updatedPlayers);
