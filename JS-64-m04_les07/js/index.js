@@ -8,34 +8,34 @@
 //  * `logTotalPrice(product)` - колббек, що приймає об'єкт продукту і логіює загальну вартість товару в консоль
 //  */
 
-//  const product = {
-//   name: "chocolate",
-//   price: 34,
-//   quantity: 5
-// }
+ const product = {
+  name: "chocolate",
+  price: 34,
+  quantity: 5 
+}
 
-// const createProduct = (obj, callback) => {
-//   // створили новий обʼєкт товару, оператором спред забралм всі властивости із параметра obj
-//   const product = {
-//     ...obj,
-//     id: 1
-//   };
+const createProduct = (obj, callback) => {
+  // створили новий обʼєкт товару, оператором спред забралм всі властивости із параметра obj
+  const product = {
+    ...obj,
+    id: 1
+  };
 
 //   // викликали функцію callback яку передають в параметрах. Передали їй новий обʼєкт як аргумент
 //   // Повернули результат виконання колбека
-//   return callback(product)
-// };
+  return callback(product)
+};
 
 // // Створили просто окрему функцію, яка приймає один параметр(будь-що) і виводить його в консоль. 
-// const logger = (val) => {
+const logger = (val) => {
 //   console.log(val)
-// }
+}
 
-// // Створили ще одну окрему функцію якак приймає параметром обʼєкт(товар) і рахує вартість.
-// const calculateTotalPrice = ({price, quantity}) => {
-//   const total = price * quantity;
-//   return total
-// }
+// // Створили ще одну окрему функцію яка приймає параметром обʼєкт(товар) і рахує вартість.
+const calculateTotalPrice = ({price, quantity}) => {
+  const total = price * quantity;
+  return total
+}
 
 // /**
 //  * коротша форма запису:
@@ -44,8 +44,8 @@
 //  */
 
 // //викликали createProduct. Передали два аргументи: обʼєкт товара і будь-яку функцію колбек
-// createProduct(product, logger); // колбеком буде функція looger
-// const totalPrice = createProduct(product, calculateTotalPrice); // колбеком буде функція calculateTotalPrice
+createProduct(product, logger); // колбеком буде функція looger
+const totalPrice = createProduct(product, calculateTotalPrice); // колбеком буде функція calculateTotalPrice
 // console.log(totalPrice)
 
 
@@ -58,48 +58,48 @@
 //  * Метод `deposit` викликає onError якщо amount більше TRANSACTION_LIMIT або менше або дорівнює нулю, і onSuccess в іншому випадку.
 //  */
 
-// const TRANSACTION_LIMIT = 1000;
+const TRANSACTION_LIMIT = 1000;
 
-// const account = {
-//   username: 'Jacob',
-//   balance: 40000,
+const account = {
+  username: 'Jacob',
+  balance: 40000,
   
-//   withdraw (amount, onSuccess, onError) {
-//     if(amount > this.balance) {
-//       return onError(amount, 'Недостатньо балансу')
-//     }
+  withdraw (amount, onSuccess, onError) {
+    if(amount > this.balance) {
+      return onError(amount, 'Недостатньо балансу')
+    }
     
-//     if(amount > TRANSACTION_LIMIT) {
-//       return onError(amount, 'перевищенно ліміт операцій')
-//     }
+    if(amount > TRANSACTION_LIMIT) {
+      return onError(amount, 'перевищенно ліміт операцій')
+    }
 
-//     onSuccess(amount);
-//   },
+    onSuccess(amount);
+  },
 
-//   deposit (amount, onSuccess, onError) {
-//     if (amount > TRANSACTION_LIMIT || amount <= 0) {
-//       return onError(amount)
-//     }
+  deposit (amount, onSuccess, onError) {
+    if (amount > TRANSACTION_LIMIT || amount <= 0) {
+      return onError(amount)
+    }
 
-//     onSuccess(amount);
-//   },
-// };
+    onSuccess(amount);
+  },
+};
 
-// const handleSuccess = (amount) => {
+const handleSuccess = (amount) => {
 //   console.log(`${amount} успішно опрацьовано!`)
-// }
+}
 
-// const handleError = (amount, message = 'Невідомо') => {
+const handleError = (amount, message = 'Невідомо') => {
 //   console.log(`${amount} Не опрацьовано! По причині: ${message}`)
-// }
+}
  
-//  account.withdraw(2000, handleSuccess, handleError);
-//  account.withdraw(600, handleSuccess, handleError);
-//  account.withdraw(300, handleSuccess, handleError);
-//  account.deposit(1700, handleSuccess, handleError);
-//  account.deposit(0, handleSuccess, handleError);
-//  account.deposit(-600, handleSuccess, handleError);
-//  account.deposit(600, handleSuccess, handleError);
+ account.withdraw(2000, handleSuccess, handleError);
+ account.withdraw(600, handleSuccess, handleError);
+ account.withdraw(300, handleSuccess, handleError);
+ account.deposit(1700, handleSuccess, handleError);
+ account.deposit(0, handleSuccess, handleError);
+ account.deposit(-600, handleSuccess, handleError);
+ account.deposit(600, handleSuccess, handleError);
 
 
 
@@ -111,32 +111,32 @@
 //  */
 
 // // коллекція співробітників, де кожен елемент це обʼєкт з іменем і сумою бонусів
-// const employees = [
-//   {
-//     name: 'Artur',
-//     bonus: 64.5
-//   },
-//   {
-//     name: 'Ivan',
-//     bonus: 49.2
-//   },
-//   {
-//     name: 'Makar',
-//     bonus: 36
-//   },
-//   {
-//     name: 'Anastasiya',
-//     bonus: 25
-//   },
-//   {
-//     name: 'Olha',
-//     bonus: 165.13
-//   },
-// ]
+const employees = [
+  {
+    name: 'Artur',
+    bonus: 64.5
+  },
+  {
+    name: 'Ivan',
+    bonus: 49.2
+  },
+  {
+    name: 'Makar',
+    bonus: 36
+  },
+  {
+    name: 'Anastasiya',
+    bonus: 25
+  },
+  {
+    name: 'Olha',
+    bonus: 165.13
+  },
+]
 
 // // створили функцію each, яка чекає масив і функцію в параметрах
-// const each = (arr, callback) => {
-//   const resultArr = []; // новий масав який будемо повертати
+const each = (arr, callback) => {
+  const resultArr = []; // новий масав який будемо повертати
 
 //   /** 
 //    * перебираємо циклом масив, диструктурувавши елемент на кожній ітерації
@@ -148,18 +148,18 @@
 //         })
 //       }
 //   */
-//   for (const {name, bonus} of arr) {
+  for (const {name, bonus} of arr) {
 //     // на кожній ітерації викликаємо колбек для бонусу і кладемо новий обʼєкт в новий масив
-//     resultArr.push({
-//       name,
-//       bonus: callback(bonus)
-//     })
-//   }
+    resultArr.push({
+      name,
+      bonus: callback(bonus)
+    })
+  }
 
-//   return resultArr; // повертаємо новий масив
-// }
+  return resultArr; // повертаємо новий масив
+}
 
-// const roundBonus = value => Math.floor(value) // те саме, що
+const roundBonus = value => Math.floor(value) // те саме, що
 
 // // 1. const roundBonus = (value) => {
 // //   return Math.floor(value)
@@ -233,13 +233,13 @@
 //  * Task 7
 //  * Виконайте рефакторинг коду за допомогою методу `forEach` та стрілочні функції.
 //  **/
-// function logItems(items) {
-//   console.log(items);
+function logItems(items) {
+  console.log(items);
   
 //   // звичайний цикл for
-//   // for (let i = 0; i < items.length; i += 1) {
-//   //   console.log(`${i + 1} - ${items[i]}`);
-//   // }
+  for (let i = 0; i < items.length; i += 1) {
+    console.log(`${i + 1} - ${items[i]}`);
+  }
 
 //   // метод масива forEach. Повна форма запису
 //   items.forEach(function(item, index) {
@@ -248,10 +248,10 @@
 
 //   // метод forEach. Коротка форма за допомогою arrow function
 //   items.forEach((item, index) => console.log(`${index + 1} - ${item}`))
-// }
+}
 
-// // logItems(['Mango', 'Poly', 'Ajax']);
-// // logItems(['🍎', '🍇', '🍑', '🍌', '🍋']);
+logItems(['Mango', 'Poly', 'Ajax']);
+logItems(['🍎', '🍇', '🍑', '🍌', '🍋']);
 
 
 // /** 
