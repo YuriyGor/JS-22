@@ -237,9 +237,9 @@ function logItems(items) {
   console.log(items);
   
 //   // звичайний цикл for
-  for (let i = 0; i < items.length; i += 1) {
-    console.log(`${i + 1} - ${items[i]}`);
-  }
+//   for (let i = 0; i < items.length; i += 1) {
+//     console.log(`${i + 1} - ${items[i]}`);
+//   }
 
 //   // метод масива forEach. Повна форма запису
 //   items.forEach(function(item, index) {
@@ -247,37 +247,37 @@ function logItems(items) {
 //   });
 
 //   // метод forEach. Коротка форма за допомогою arrow function
-//   items.forEach((item, index) => console.log(`${index + 1} - ${item}`))
+  items.forEach((item, index) => console.log(`${index + 1} - ${item}`))
 }
 
-logItems(['Mango', 'Poly', 'Ajax']);
-logItems(['🍎', '🍇', '🍑', '🍌', '🍋']);
+// logItems(['Mango', 'Poly', 'Ajax']);
+// logItems(['🍎', '🍇', '🍑', '🍌', '🍋']);
 
 
 // /** 
 //  * Task 8
 //  * Виконайте рефакторинг коду за допомогою методу `forEach` та стрілочні функції.
 //  * Те саме: цикл for замінили на forEach
-//  **/
+// //  **/
 
-// function printContactsInfo({ names, phones }) {
-//   const nameList = names.split(',');
-//   const phoneList = phones.split(',');
+function printContactsInfo({ names, phones }) {
+  const nameList = names.split(',');
+  const phoneList = phones.split(',');
   
-//   // for (let i = 0; i < nameList.length; i += 1) {
-//   //   console.log(`${nameList[i]}: ${phoneList[i]}`);
-//   // }
+// //   for (let i = 0; i < nameList.length; i += 1) {
+// //     console.log(`${nameList[i]}: ${phoneList[i]}`);
+// //   }
 
-//   nameList.forEach((name, currentIndex) => {
-//     console.log(`${name}: ${phoneList[currentIndex]}`);
-//   });
+  nameList.forEach((name, currentIndex) => {
+    // console.log(`${name}: ${phoneList[currentIndex]}`);
+  });
 
-// }
+}
 
-// printContactsInfo({
-//   names: 'Jacob,William,Solomon,Artemis',
-//   phones: '89001234567,89001112233,890055566377,890055566300',
-// });
+printContactsInfo({
+  names: 'Jacob,William,Solomon,Artemis',
+  phones: '89001234567,89001112233,890055566377,890055566300',
+});
 
 
 // /** 
@@ -285,26 +285,26 @@ logItems(['🍎', '🍇', '🍑', '🍌', '🍋']);
 //  * Виконайте рефакторинг коду за допомогою методу `forEach` та стрілочні функції.
 //  **/
 
-// const calсulateAverage = (...args) => {
-//   let total = 0;
+const calсulateAverage = (...args) => {
+  let total = 0;
 
 //   // for (let i = 0; i < args.length; i++) {
 //   //   total += args[i];
 //   // }
 
 //   // ці два forEach еквівалентні
-//   args.forEach(number => total += number);
+  args.forEach(number => total += number);
   
-//   // args.forEach(function(el) {
-//   //   total = total + el
-//   // });
+//   args.forEach(function(el) {
+//     total = total + el
+//   });
   
-//   return total / args.length;
-// }
+  return total / args.length;
+}
 
-// console.log(calсulateAverage(1, 2, 3, 4)); // 2.5
-// console.log(calсulateAverage(14, 8, 2)); // 8
-// console.log(calсulateAverage(27, 43, 2, 8, 36)); // 23.2
+console.log(calсulateAverage(1, 2, 3, 4)); // 2.5
+console.log(calсulateAverage(14, 8, 2)); // 8
+console.log(calсulateAverage(27, 43, 2, 8, 36)); // 23.2
 
 
 // /** Питання №1 від Вови */ /**Відповідь return має бути після виконання циклу. */
