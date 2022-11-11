@@ -21,15 +21,28 @@ const tweets = [
 
 // const tags = tweets.map(t => t.tags).flat();
 // или
-const tags = tweets.flatMap(t => t.tags);
-console.log(tags);
+// const tags = tweets.flatMap(t => t.tags);
+// console.log(tags);
 
-const stats = tags.reduce((acc, tag) => {
-    return {
-        ...acc,
-        [tag]: acc[tag] ? acc[tag] + 1 : 1,
-    };
-}, {});
+// const stats = tags.reduce((acc, tag) => {
+//     return {
+//         ...acc,
+//         [tag]: acc[tag] ? acc[tag] + 1 : 1,
+//     };
+// }, {});
+// console.log(stats);
+
+// или можно через цепочки(13(022)-chaining)
+
+const stats = tweets
+    weet.flatMap(tweet => tweet.tags)
+    .reduce(
+        (acc, tag) => ({
+            ...acc,
+            [tag]: acc[tag] ? acc[tag] + 1 : 1,
+        }),
+        {},
+);
 console.log(stats);
 
 
