@@ -80,5 +80,7 @@ const updateCounter = function (value, operation) {
     operation(value);
 };
 
-updateCounter(10, counter.increment.bind(counter));
-updateCounter(5, counter.decrement);
+// updateCounter(10, counter.increment.bind(counter));
+// updateCounter(5, counter.decrement.bind(counter));
+
+// console.log(counter);
