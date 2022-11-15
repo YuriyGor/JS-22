@@ -290,22 +290,46 @@ const getSortedCarsOnSale = cars => cars.filter(car => car.onSale).sort((a,b) =>
 
 // ЗАМЫКАНИЕ
 
-const sortCarsByProp = (cars, prop) => {
+// const sortCarsByProp = (cars, prop) => {
 
-    const countCalls = 0;
+//     const countCalls = 0;
 
-    const sortCars = () => {
-        cars.sort((a, b) => a[prop] - b[prop]);
-        countCalls++;
-        console.log(countCalls)
-    }
+//     const sortCars = () => {
+//         cars.sort((a, b) => a[prop] - b[prop]);
+//         countCalls++;
+//         console.log(countCalls)
+//     }
 
-    return sortCars
+//     return sortCars
+// }
+
+// const sortSomething = sortCarsByProp(cars, `price`);
+
+// sortSomething()
+// sortSomething()
+// sortSomething()
+// sortSomething()
+
+
+
+const pizzaPalace = {
+  pizzas: ["Ultracheese", "Smoked", "Four meats"],
+  order(pizzaName) {},
+};
+// Change code above this line
+
+// Callback for onSuccess
+function makePizza(pizzaName) {
+  return `Your order is accepted. Cooking pizza ${pizzaName}.`;
 }
 
-const sortSomething = sortCarsByProp(cars, `price`);
+// Callback for onError
+function onOrderError(error) {
+  return `Error! ${error}`;
+}
 
-sortSomething()
-sortSomething()
-sortSomething()
-sortSomething()
+// Method calls with callbacks
+pizzaPalace.order("Smoked", makePizza, onOrderError);
+pizzaPalace.order("Four meats", makePizza, onOrderError);
+pizzaPalace.order("Big Mike", makePizza, onOrderError);
+pizzaPalace.order("Vienna", makePizza, onOrderError);
