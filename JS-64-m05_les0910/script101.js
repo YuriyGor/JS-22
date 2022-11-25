@@ -171,6 +171,60 @@
 
 
 
+const arr = [1, 2, 3, 4, 5];
+
+if (arr.length) {
+    
+}//якщо масив не пустий
+
+if (!arr.length) {
+    
+}//якщо масив пустий
 
 
 
+// також з рядочками
+
+const str = ``;
+if (str === ``){
+    
+}
+
+
+if (!str) {
+    
+}
+
+
+
+if (email === `` || password === ``) {
+    
+}
+
+if (!email || !password) {
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// function foo() {
+    
+// }
+
+
+// (function () {
+    
+// })()
+
+// const boo = function () {
+    
+// }
