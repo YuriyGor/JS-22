@@ -171,39 +171,39 @@
 
 
 
-const arr = [1, 2, 3, 4, 5];
+// const arr = [1, 2, 3, 4, 5];
 
-if (arr.length) {
+// if (arr.length) {
     
-}//якщо масив не пустий
+// }//якщо масив не пустий
 
-if (!arr.length) {
+// if (!arr.length) {
     
-}//якщо масив пустий
+// }//якщо масив пустий
 
 
 
-// також з рядочками
+// // також з рядочками
 
-const str = ``;
-if (str === ``){
+// const str = ``;
+// if (str === ``){
     
-}
+// }
 
 
-if (!str) {
+// if (!str) {
     
-}
+// }
 
 
 
-if (email === `` || password === ``) {
+// if (email === `` || password === ``) {
     
-}
+// }
 
-if (!email || !password) {
+// if (!email || !password) {
     
-}
+// }
 
 
 
@@ -228,3 +228,50 @@ if (!email || !password) {
 // const boo = function () {
     
 // }
+
+
+
+
+
+
+
+// const arr = [10, 20, 30];
+// const arr1 = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// for (let i = 0; i < arr.length || i < arr1.length; i += 1) {
+//     if (arr[i]) {
+//         console.log(arr[i]);
+//     }
+//     if (arr1[i]) {
+//         console.log(arr1[i]);
+//     }
+// }
+
+
+
+
+
+
+
+
+
+const str = `slkiuthfdjmm;v;g;kgjngn,,m.cmkdjfn`
+
+const result = str.split(``).reduce((acc, item) => {
+    if (!acc.hasOwnProperty(item)) {
+        acc[item] = 1;
+    } else {
+        acc[item] += 1;
+    }
+    return acc;
+}, {})
+    
+console.log(result);
+
+
+
+
+
+
+
+
