@@ -19,6 +19,12 @@
 
 
 
+// Контекст(this)
+//     - Где и как была объявлена функция НЕ ИМЕЕТ НИКАКОГО ВЛИЯНИЯ на контекст.
+//   - Контекст определяется В МОМЕНТ ВЫЗОВА ФУНКЦИИ, если он не привязан явно.
+
+
+
 // Как метод объекта. Вызов в контексте объекта.
 
 
@@ -30,6 +36,7 @@
 // };
 
 // user.showTag();
+
 
 // // // Вызов без контекста
 // //     - В строгом режиме = undefined
@@ -116,7 +123,7 @@ const fn = function () {
     console.log(`fn -> this`, this)
 };
 
-// fn();
+// fn();  // Какой this???
 
 
 
@@ -132,13 +139,13 @@ const book = {
     },
 };
 
-// book.showThis();
+// book.showThis(); // Какой this???
 
 // const outerShowThis = book.showThis;
-// outerShowThis();
+// outerShowThis(); // Какой this???
 
 // const outerShowTitle = book.showTitle;
-// outerShowTitle();
+// outerShowTitle();  // Какой this???
 
 
 
@@ -150,7 +157,7 @@ const book = {
 //     // this.color = color;
 //   };
 
-//   changeColor();     //Какой this???
+// //   changeColor();     //Какой this???
 
 //   const sweater = {
 //     color: `teal`,
