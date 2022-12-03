@@ -37,7 +37,7 @@ const getModels = cars => cars.map(car => car.model);
 const allModels = getModels(cars);
 // console.table(allModels);
 
-/**
+/** 
  * Task 2.
  * Нехай функція `makeCarsWithDiscount` повертає новий масив об'єктів із змінени
  * значенням властивості `price` залежно від переданої знижки.
@@ -220,8 +220,7 @@ const cars2 = sortByModel(cars, "desc");
 /**
  * Task 10.
  *
- * Нехай функція `getTotalAmount` повертає загальну кількість автомобілів (значення
- * властивостей `amount`).
+ * Нехай функція `getTotalAmount` повертає загальну кількість автомобілів (значення властивостей `amount`).
  */
 
 // const getTotalAmount = cars => {

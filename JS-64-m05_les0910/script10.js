@@ -299,7 +299,7 @@
 // class Notes{
 //     static Priority = {
 //           LOW: 'low',
-//           NORMAL: 'normal',
+//           NORMAL: 'normal', 
 //           HIGH: 'high'
 //         }
 //         constructor(arr){
