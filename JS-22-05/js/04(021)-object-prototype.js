@@ -8,32 +8,32 @@
 //     - Собственные свойства и Object.prototype.hasOwnProperty()
 //     - Цепочка прототипов
 
-// const objC = {
-//     z: 5
-// };
+const objC = {
+    z: 5
+};
 
-// const objB = Object.create(objC);
+const objB = Object.create(objC);
 
-// objB.y = 2;
+objB.y = 2;
 
-// console.log(objC);
+console.log(objC);
 
-// console.log(objB);
+console.log(objB);
 
-// // console.log(objB.y);
-// // console.log(objB.z);
+console.log(objB.y);
+console.log(objB.z);
 
 
-// const objA = Object.create(objB);
-// objA.x = 1;
+const objA = Object.create(objB);
+objA.x = 1;
 
-// console.log(objA.z);
+console.log(objA.z);
 
-// // objA.z = 10000;
+// objA.z = 10000;
 
-// console.log(`objA`, objA);
+console.log(`objA`, objA);
 
-// console.log(objA.hasOwnProperty(`x`));
+console.log(objA.hasOwnProperty(`x`));
 
 
 // const dummyObj = Object.create({

@@ -44,8 +44,8 @@ class Car1 {
   #test = `test`;
 
   constructor({ brand, model, price } = {}) {
-    // console.log(`Выполняется constructor`);
-    // console.log(this);
+    console.log(`Выполняется constructor`);
+    console.log(this);
 
     this.brand = brand;
     this.model = model;
